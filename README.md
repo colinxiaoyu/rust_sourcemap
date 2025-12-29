@@ -1,6 +1,7 @@
 # SourceMap Bug Locator
 
 一个基于 Tauri + React + Rust 的桌面应用，用于定位生产环境中的 JavaScript Bug 原始位置。
+![logo](./screenshot/image.png)
 
 ## 功能特性
 
