@@ -1,0 +1,178 @@
+// ========================================
+// Header Section
+// ========================================
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-md;
+}
+
+h1 {
+  text-align: center;
+  color: var(--heading-color);
+  margin-bottom: $spacing-xs;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--subtitle-color);
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+
+.theme-toggle {
+  border-radius: $radius-circle;
+  border: 2px solid var(--input-border);
+  background-color: var(--card-bg);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  @include flex-center;
+  transition: all $transition-normal ease;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: $color-primary;
+  }
+}
+
+// ========================================
+// Form Section
+// ========================================
+
+.form-section {
+  background: var(--card-bg);
+  padding: $spacing-xl;
+  border-radius: $radius-md;
+  @include card-shadow;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-lg;
+
+  label {
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 0.95rem;
+  }
+}
+
+.file-input-group {
+  display: flex;
+  gap: $spacing-xs;
+}
+
+.file-input {
+  flex: 1;
+  @include input-base;
+}
+
+.select-btn {
+  @include button-base;
+  padding: $spacing-sm $spacing-lg;
+  font-size: 0.95rem;
+  background-color: $color-primary;
+  color: white;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+}
+
+input[type="number"] {
+  @include input-base;
+}
+
+.parse-btn {
+  @include button-base;
+  padding: $spacing-md $spacing-xl;
+  font-size: 1rem;
+  background-color: $color-success;
+  color: white;
+  margin-top: $spacing-xs;
+
+  &:hover:not(:disabled) {
+    background-color: $color-success-dark;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// ========================================
+// Error Message
+// ========================================
+
+.error-message {
+  background-color: var(--error-bg);
+  border-left: 4px solid var(--error-border);
+  color: var(--error-text);
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-sm;
+  font-size: 0.95rem;
+}
+
+// ========================================
+// Result Section
+// ========================================
+
+.result-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: $spacing-xl;
+  border-radius: $radius-md;
+  box-shadow: 0 4px 12px var(--shadow-strong);
+  color: white;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: $spacing-lg;
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm $spacing-md;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: $radius-sm;
+  margin-bottom: $spacing-sm;
+  backdrop-filter: blur(10px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.result-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.result-value {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+  word-break: break-all;
+  max-width: 60%;
+}

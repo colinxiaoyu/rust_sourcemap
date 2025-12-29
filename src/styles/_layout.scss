@@ -1,0 +1,15 @@
+// ========================================
+// Layout
+// ========================================
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}

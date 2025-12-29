@@ -1,0 +1,50 @@
+// ========================================
+// Root & Theme Setup
+// ========================================
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  // Light theme (default)
+  --bg-color: #{$light-bg};
+  --text-color: #{$light-text};
+  --heading-color: #{$light-heading};
+  --subtitle-color: #{$light-subtitle};
+  --card-bg: #{$light-card};
+  --input-bg: #{$light-input-bg};
+  --input-border: #{$light-input-border};
+  --input-text: #{$light-heading};
+  --error-bg: #{$light-error-bg};
+  --error-text: #{$color-error-text};
+  --error-border: #{$color-error};
+  --shadow: #{$light-shadow};
+  --shadow-strong: #{$light-shadow-strong};
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+[data-theme="dark"] {
+  --bg-color: #{$dark-bg};
+  --text-color: #{$dark-text};
+  --heading-color: #{$dark-heading};
+  --subtitle-color: #{$dark-subtitle};
+  --card-bg: #{$dark-card};
+  --input-bg: #{$dark-input-bg};
+  --input-border: #{$dark-input-border};
+  --input-text: #{$dark-text};
+  --error-bg: #{$dark-error-bg};
+  --error-text: #{$color-error};
+  --error-border: #{$color-error};
+  --shadow: #{$dark-shadow};
+  --shadow-strong: #{$dark-shadow-strong};
+}

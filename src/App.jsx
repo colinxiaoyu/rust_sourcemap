@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { invoke } from "@tauri-apps/api/core";
 import { open } from "@tauri-apps/plugin-dialog";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [sourcemapPath, setSourcemapPath] = useState("");
@@ -10,6 +10,19 @@ function App() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme || "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   async function selectFile() {
     try {
@@ -64,8 +77,15 @@ function App() {
 
   return (
     <main className="container">
-      <h1>SourceMap Bug Locator</h1>
-      <p className="subtitle">定位生产环境 Bug 的原始位置</p>
+      <div className="header">
+        <div>
+          <h1>SourceMap Bug Locator</h1>
+          <p className="subtitle">定位生产环境 Bug 的原始位置</p>
+        </div>
+        <button onClick={toggleTheme} className="theme-toggle" aria-label="切换主题">
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
+      </div>
 
       <div className="form-section">
         <div className="form-group">

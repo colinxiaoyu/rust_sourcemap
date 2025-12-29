@@ -1,0 +1,38 @@
+// ========================================
+// Mixins
+// ========================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-base {
+  border-radius: $radius-sm;
+  border: none;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+}
+
+@mixin input-base {
+  border-radius: $radius-sm;
+  border: 2px solid var(--input-border);
+  padding: $spacing-sm $spacing-md;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--input-text);
+  background-color: var(--input-bg);
+  transition: border-color $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: 0 2px 8px var(--shadow);
+}

@@ -9,18 +9,12 @@ pub struct SourcePosition {
     pub name: Option<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct StackTraceInput {
-    pub line: u32,
-    pub column: u32,
-}
-
 // Parse sourcemap and get original position
 #[tauri::command]
 fn parse_sourcemap(file_path: String, line: u32, column: u32) -> Result<SourcePosition, String> {
     // Read sourcemap file
-    let content = fs::read_to_string(&file_path)
-        .map_err(|e| format!("Failed to read file: {}", e))?;
+    let content =
+        fs::read_to_string(&file_path).map_err(|e| format!("Failed to read file: {}", e))?;
 
     // Parse sourcemap
     let sm = sourcemap::SourceMap::from_reader(content.as_bytes())
@@ -30,14 +24,12 @@ fn parse_sourcemap(file_path: String, line: u32, column: u32) -> Result<SourcePo
     let token = sm.lookup_token(line - 1, column);
 
     match token {
-        Some(token) => {
-            Ok(SourcePosition {
-                source: token.get_source().map(|s| s.to_string()),
-                line: Some(token.get_src_line() + 1),
-                column: Some(token.get_src_col()),
-                name: token.get_name().map(|n| n.to_string()),
-            })
-        }
+        Some(token) => Ok(SourcePosition {
+            source: token.get_source().map(|s| s.to_string()),
+            line: Some(token.get_src_line() + 1),
+            column: Some(token.get_src_col()),
+            name: token.get_name().map(|n| n.to_string()),
+        }),
         None => Err("Could not find token at specified position".to_string()),
     }
 }

@@ -1,0 +1,54 @@
+// ========================================
+// Variables & Theme Configuration
+// ========================================
+
+// Color Palette
+$color-primary: #3498db;
+$color-primary-dark: #2980b9;
+$color-success: #27ae60;
+$color-success-dark: #229954;
+$color-error: #e74c3c;
+$color-error-text: #c0392b;
+
+// Light Theme Colors
+$light-bg: #f6f6f6;
+$light-text: #0f0f0f;
+$light-heading: #2c3e50;
+$light-subtitle: #7f8c8d;
+$light-card: #ffffff;
+$light-input-bg: #f8f9fa;
+$light-input-border: #dfe6e9;
+$light-error-bg: #ffeaea;
+$light-shadow: rgba(0, 0, 0, 0.1);
+$light-shadow-strong: rgba(0, 0, 0, 0.15);
+
+// Dark Theme Colors
+$dark-bg: #2f2f2f;
+$dark-text: #f6f6f6;
+$dark-heading: #ecf0f1;
+$dark-subtitle: #95a5a6;
+$dark-card: #1a1a1a;
+$dark-input-bg: #2f2f2f;
+$dark-input-border: #4a4a4a;
+$dark-error-bg: #3d1f1f;
+$dark-shadow: rgba(0, 0, 0, 0.3);
+$dark-shadow-strong: rgba(0, 0, 0, 0.5);
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-circle: 50%;
+
+// Transitions
+$transition-fast: 0.25s;
+$transition-normal: 0.3s;
+
+// Breakpoints
+$breakpoint-mobile: 600px;
